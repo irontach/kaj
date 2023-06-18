@@ -10,6 +10,6 @@ Uživatel si po zadání své hmotnosti a výšky může vypočítat svůj BMI p
 kdy by si měl dát další talířek, aby dosáhl optimální rychlosti zažívání.   
 Ačkoliv intervaly budu muset po návštěvě nějakého podniku kalibrovat, tak se jedná o přibližné hodnoty.   
 Dále aplikace uživatele upozorní popupem, pokud konzumuje moc rychle.   
-Třešničkou na rtu je pak dark mode a možnost vrácení counteru v případě, že se uživatel přepočítal.
+Třešničkou na dortu je pak dark mode a možnost vrácení counteru v případě, že se uživatel přepočítal.
 Aplikace by měla splňovat všechny požadavky jak povinné tak i další.
 
