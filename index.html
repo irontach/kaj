@@ -27,7 +27,6 @@
 
 
    <script>
-       // Get the buttons and counter elements
        const sushiBtn = document.getElementById("sushiBtn");
        const sweetBtn = document.getElementById("sweetBtn");
        const saltyBtn = document.getElementById("saltyBtn");
@@ -36,12 +35,10 @@
        const strategyAlert = document.getElementById("strategyAlert");
 
 
-       // Initialize the plate count and highest record
        let count = 0;
        let record = 0;
 
 
-       // Event listeners for button clicks
        sushiBtn.addEventListener("click", () => {
            count++;
            updateCounter();
@@ -63,13 +60,11 @@
        });
 
 
-       // Update the counter display
        function updateCounter() {
            platesCount.textContent = count;
        }
 
 
-       // Check if a new record has been set
        function checkStrategy() {
            if (count > record) {
                record = count;
@@ -77,8 +72,6 @@
            }
 
 
-           // Implement your strategy alerts here
-           // For example, alert every 10 plates
            if (count % 10 === 0) {
                strategyAlert.textContent = "Time to slow down!";
            }
