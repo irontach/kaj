@@ -111,9 +111,11 @@ RunningSushiHelper.SushiHelper.prototype = {
         });
 
         window.addEventListener("popstate", () => {
+            if(this.record == this.count){
+                this.record--;
+            }
             this.count--;
             this.updateCounter();
-            this.record--;
             this.updateRecord();
           });
 
