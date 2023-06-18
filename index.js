@@ -117,7 +117,6 @@ RunningSushiHelper.SushiHelper.prototype = {
             this.updateRecord();
           });
 
-          history.replaceState({ count: this.count, record: this.record }, null, null);
 
 
         
@@ -127,6 +126,8 @@ RunningSushiHelper.SushiHelper.prototype = {
     updateCounter: function () {
         const platesCount = document.getElementById("platesCount");
         platesCount.textContent = this.count;
+        history.pushState({ count: this.count, record: this.record }, null, null);
+
 
     },
 
