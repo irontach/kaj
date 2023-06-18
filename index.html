@@ -13,19 +13,15 @@
     <div class="container">
         <div class="graphic">
             <svg id="svg1">
-                
+
                 <circle cx="40" cy="60" r="40" fill="green" />
                 <rect x="40" y="20" width="25" height="80" fill="green" />
                 <circle cx="60" cy="60" r="40" fill="green" />
                 <circle cx="60" cy="60" r="36" fill="white" />
                 <rect x="45" y="45" width="30" height="30" fill="red" />
 
-                
             </svg>
         </div>
-
-
-
 
         <div class="graphic">
             <svg id="svg2">
@@ -63,12 +59,12 @@
     <div id="saltyBtn" class="button">Non-Sushi Salty</div>
 
     <div class="input-container">
-        <label for="WeightInput">Weight  (in kgs):</label>
+        <label for="WeightInput">Weight (in kgs):</label>
         <input type="number" id="WeightInput" placeholder="Enter Weight" />
     </div>
 
     <div class="input-container">
-        <label for="heightInput">Height  (in cms):</label>
+        <label for="heightInput">Height (in cms):</label>
         <input type="number" id="heightInput" placeholder="Enter height" />
     </div>
 
@@ -102,7 +98,7 @@
         const WeightInput = document.getElementById("WeightInput");
         const heightInput = document.getElementById("heightInput");
         const submitBtn = document.getElementById("submitBtn");
-        
+
 
 
         let count = 0;
@@ -135,32 +131,32 @@
             const popup = document.createElement("div");
             popup.classList.add("popup");
             popup.textContent = "Eat up!";
-            
+
             document.body.appendChild(popup);
 
-        
+
             document.getElementById('myAudiobell').play();
-        
-            
+
+
             setTimeout(() => {
-            document.body.removeChild(popup);
+                document.body.removeChild(popup);
             }, 5000);
             setInterval(() => {
-            const popup = document.createElement("div");
-            popup.classList.add("popup");
-            popup.textContent = "Eat up!";
-            
-            document.body.appendChild(popup);
+                const popup = document.createElement("div");
+                popup.classList.add("popup");
+                popup.textContent = "Eat up!";
 
-        
-            document.getElementById('myAudiobell').play();
-        
-            
-            setTimeout(() => {
-            document.body.removeChild(popup);
-            }, 5000);
+                document.body.appendChild(popup);
 
-        }, 5000*bmi/10);
+
+                document.getElementById('myAudiobell').play();
+
+
+                setTimeout(() => {
+                    document.body.removeChild(popup);
+                }, 5000);
+
+            }, 5000 * bmi / 10);
         });
 
 
@@ -214,7 +210,7 @@
             margin-bottom: 20px;
         }
 
-       
+
         .button {
             display: inline-block;
             margin: 10px;
@@ -222,17 +218,26 @@
             background-color: #4CAF50;
             border-radius: 10px;
             cursor: pointer;
-        }
+            transition: transform 0.3s ease-in-out;
 
+        }
+        .button:hover {
+            transform: scale(1.2);
+            
+        }
         .inner-button {
             padding: 10px 20px;
             background-color: #4CAF50;
             border-radius: 10px;
             cursor: pointer;
-
+            transition: transform 0.3s ease-in-out;
         }
+        .inner-button:hover {
+            transform: scale(1.2);
+            
+        }
+
         .graphic {
-            margin: 10px;
             width: calc(100% / 3);
         }
 
@@ -246,11 +251,34 @@
             padding: 20px;
             border-radius: 5px;
             font-size: 24px;
+            transform: rotate(-5deg) scale(0.9);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .popup:hover {
+            transform: rotate(0deg) scale(1);
+
         }
 
         svg {
             width: auto;
             height: auto;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+            }
+            .graphic {
+                transform: scale(0.6);
+            }
+
+        }
+        
+        @media (max-width: 400px) {
+            .button {
+                font-size: 16px;
+            }
         }
     </style>
 </body>
