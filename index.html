@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    <link rel="icon" href="icon.ico" type="image/x-icon">
 
 
 <head>
@@ -72,11 +73,6 @@
 
     <h2 id="bottomText">Waiting for BMI </h2>
 
-
-
-
-
-
     <div id="counter">
         <h2>Plates Eaten: <span id="platesCount">0</span></h2>
         <h2>Highest Record: <span id="highestRecord">0</span></h2>
@@ -88,7 +84,7 @@
 
     <script>
         const RunningSushiHelper = {};
-        
+
         RunningSushiHelper.SushiHelper = function () {
             this.count = 0;
             this.record = 0;
@@ -221,7 +217,8 @@
             display: flex;
             justify-content: center;
             margin-bottom: 20px;
-        }
+        padding: 20px;
+    }   
 
 
         .button {
@@ -280,6 +277,9 @@
             width: auto;
             height: auto;
         }
+        .input-container {
+        margin-bottom: 10px;
+    }
 
         @media (max-width: 600px) {
             .container {
