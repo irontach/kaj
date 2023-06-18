@@ -50,6 +50,7 @@
     <audio id="myAudiosalty" src="salty.mp3" preload="auto"></audio>
     <audio id="myAudiosweet" src="sweet.mp3" preload="auto"></audio>
     <audio id="myAudiobell" src="bell.mp3" preload="auto"></audio>
+    <audio id="myAudioerror" src="error.mp3" preload="auto"></audio>
 
 
 
@@ -88,6 +89,8 @@
         RunningSushiHelper.SushiHelper = function () {
             this.count = 0;
             this.record = 0;
+            this.lastButtonClickTime = 0;
+
         };
 
         RunningSushiHelper.SushiHelper.prototype = {
@@ -171,6 +174,25 @@
             },
 
             checkStrategy: function () {
+
+                if (new Date().getTime() - this.lastButtonClickTime < 1000) {
+                        const popup = document.createElement("div");
+                        popup.classList.add("popup");
+                        popup.textContent = "Slow down!";
+
+                        document.body.appendChild(popup);
+
+
+                        document.getElementById('myAudioerror').play();
+
+
+                        setTimeout(() => {
+                            document.body.removeChild(popup);
+                        }, 3000);
+                }   
+
+                this.lastButtonClickTime = new Date().getTime();
+
                 const highestRecord = document.getElementById("highestRecord");
                 const strategyAlert = document.getElementById("strategyAlert");
 
@@ -245,6 +267,8 @@
 
         .button:hover {
             transform: scale(1.2);
+            background-color: rgba(0, 0, 0, 0.2);
+
         }
 
         .inner-button {
