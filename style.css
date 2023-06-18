@@ -1,0 +1,98 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+body {
+    background: linear-gradient(to bottom, #c1f0ca, #02531a);
+    margin: 0;
+    padding: 20px;
+}
+
+
+.button {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    
+    background-color: rgba(0, 0, 0, 0.01);
+    border: 2px solid black;
+
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 15px 5px rgba(0, 32, 0, 0.2);
+}
+
+.button:hover {
+    transform: scale(1.2);
+    background-color: rgba(0, 0, 0, 0.2);
+
+}
+
+.inner-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.inner-button:hover {
+    transform: scale(1.2);
+}
+
+
+.graphic {
+    width: calc(100% / 3);
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 24px;
+    transform: rotate(-5deg) scale(0.9);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 15px 5px rgba(0, 32, 0, 0.2);
+}
+
+
+.popup:hover {
+    transform: rotate(0deg) scale(1);
+
+}
+
+svg {
+    width: auto;
+    height: auto;
+}
+
+.input-container {
+    margin-bottom: 10px;
+
+}
+
+@media (max-width: 600px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .graphic {
+        transform: scale(0.6);
+    }
+
+}
+
+@media (max-width: 400px) {
+    .button {
+        font-size: 16px;
+    }
+}
