@@ -117,6 +117,9 @@ RunningSushiHelper.SushiHelper.prototype = {
             this.updateRecord();
           });
 
+          history.replaceState({ count: this.count, record: this.record }, null, null);
+
+
         
 
     },
