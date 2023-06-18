@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <link rel="icon" href="icon.ico" type="image/x-icon">
+<link rel="icon" href="icon.ico" type="image/x-icon">
 
 
 <head>
@@ -55,9 +55,9 @@
 
 
 
-    <div id="sushiBtn" class="button">Sushi</div>
-    <div id="sweetBtn" class="button">Non-Sushi Sweet</div>
-    <div id="saltyBtn" class="button">Non-Sushi Salty</div>
+    <button id="sushiBtn" class="button">Sushi</button>
+    <button id="sweetBtn" class="button">Non-Sushi Sweet</button>
+    <button id="saltyBtn" class="button">Non-Sushi Salty</button>
 
     <div class="input-container">
         <label for="WeightInput">Weight (in kgs):</label>
@@ -217,8 +217,14 @@
             display: flex;
             justify-content: center;
             margin-bottom: 20px;
-        padding: 20px;
-    }   
+            padding: 20px;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #ffffff, #02531a);
+            margin: 0;
+            padding: 20px;
+        }
 
 
         .button {
@@ -229,6 +235,8 @@
             border-radius: 10px;
             cursor: pointer;
             transition: transform 0.3s ease-in-out;
+            box-shadow: 0 15px 5px rgba(0, 32, 0, 0.2);
+
 
         }
 
@@ -239,6 +247,7 @@
 
         .inner-button {
             padding: 10px 20px;
+
             background-color: #4CAF50;
             border-radius: 10px;
             cursor: pointer;
@@ -247,8 +256,8 @@
 
         .inner-button:hover {
             transform: scale(1.2);
-
         }
+        
 
         .graphic {
             width: calc(100% / 3);
@@ -266,7 +275,9 @@
             font-size: 24px;
             transform: rotate(-5deg) scale(0.9);
             transition: transform 0.3s ease-in-out;
+            box-shadow: 0 15px 5px rgba(0, 32, 0, 0.2);
         }
+        
 
         .popup:hover {
             transform: rotate(0deg) scale(1);
@@ -277,9 +288,11 @@
             width: auto;
             height: auto;
         }
+
         .input-container {
-        margin-bottom: 10px;
-    }
+            margin-bottom: 10px;
+
+        }
 
         @media (max-width: 600px) {
             .container {
