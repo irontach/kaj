@@ -9,21 +9,26 @@
 </head>
 
 
+
 <body>
-    <h1>Running Sushi Helper</h1>
-    <div class="container">
-        <div class="graphic">
-            <img src="sushipng.png" alt="sushi png">
-        </div>
-
-        <div class="graphic">
-            <img src="sushipng.png" alt="sushi png">
-        </div>
-
-        <div class="graphic">
-            <img src="sushipng.png" alt="sushi png">
-        </div>
+    <div class="header">        
+        <h1>Running Sushi Helper</h1>
+        <img src="sushisvg.svg" alt="sushi svg" style="height: 50px;">
     </div>
+
+    <section class="container">
+        <div class="graphic">
+            <img src="sushipng.png" alt="sushi png">
+        </div>
+
+        <div class="graphic">
+            <img src="sushipng.png" alt="sushi png">
+        </div>
+
+        <div class="graphic">
+            <img src="sushipng.png" alt="sushi png">
+        </div>
+    </section>
 
 
     <audio id="myAudiobite" src="bite.mp3" preload="auto"></audio>
@@ -32,38 +37,37 @@
     <audio id="myAudiobell" src="bell.mp3" preload="auto"></audio>
     <audio id="myAudioerror" src="error.mp3" preload="auto"></audio>
 
+    <section id="interaction">
+        <div id="buttonDiv">
+            <button id="sushiBtn" class="button">Sushi</button>
+            <button id="sweetBtn" class="button">Non-Sushi Sweet</button>
+            <button id="saltyBtn" class="button">Non-Sushi Salty</button>
+        </div>
+
+        <div class="input-container">
+            <label for="WeightInput">Weight (in kgs):</label>
+            <input type="number" id="WeightInput" placeholder="Enter Weight" autofocus/>
+        </div>
+
+        <div class="input-container">
+            <label for="heightInput">Height (in cms):</label>
+            <input type="number" id="heightInput" placeholder="Enter height" autofocus />
+        </div>
+
+        <button id="submitBtn" class="button">Submit</button>
+
+        <h2 id="bottomText">Waiting for BMI </h2>
+
+        <div id="counter">
+            <h2>Plates Eaten: <span id="platesCount">0</span></h2>
+            <h2>Highest Record: <span id="highestRecord">0</span></h2>
+        </div>
 
 
+        <div id="strategyAlert"></div>
+    </section>
 
-
-    <button id="sushiBtn" class="button">Sushi</button>
-    <button id="sweetBtn" class="button">Non-Sushi Sweet</button>
-    <button id="saltyBtn" class="button">Non-Sushi Salty</button>
-
-    <div class="input-container">
-        <label for="WeightInput">Weight (in kgs):</label>
-        <input type="number" id="WeightInput" placeholder="Enter Weight" />
-    </div>
-
-    <div class="input-container">
-        <label for="heightInput">Height (in cms):</label>
-        <input type="number" id="heightInput" placeholder="Enter height" />
-    </div>
-
-    <button id="submitBtn" class="button">Submit</button>
-
-    <h2 id="bottomText">Waiting for BMI </h2>
-
-    <div id="counter">
-        <h2>Plates Eaten: <span id="platesCount">0</span></h2>
-        <h2>Highest Record: <span id="highestRecord">0</span></h2>
-    </div>
-
-
-    <div id="strategyAlert"></div>
-
-
-    <script src = "index.js"></script>
+    <script src="index.js"></script>
 </body>
 
 

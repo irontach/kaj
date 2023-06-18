@@ -4,6 +4,16 @@
     margin-bottom: 20px;
     padding: 20px;
 }
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.header img {
+    margin-bottom: 1em;
+}
 
 body {
     background: linear-gradient(to bottom, #c1f0ca, #02531a);
@@ -44,9 +54,16 @@ body {
     transform: scale(1.2);
 }
 
+h1 {
+    text-align: center;
+}
+
 
 .graphic {
     width: calc(100% / 3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .popup {
@@ -62,6 +79,13 @@ body {
     transform: rotate(-5deg) scale(0.9);
     transition: transform 0.3s ease-in-out;
     box-shadow: 0 15px 5px rgba(0, 32, 0, 0.2);
+}
+
+#interaction {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 
@@ -81,9 +105,6 @@ svg {
 }
 
 @media (max-width: 600px) {
-    .container {
-        flex-direction: column;
-    }
 
     .graphic {
         transform: scale(0.6);
