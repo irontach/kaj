@@ -4,6 +4,7 @@
     margin-bottom: 20px;
     padding: 20px;
 }
+
 .header {
     display: flex;
     justify-content: center;
@@ -12,13 +13,21 @@
 }
 
 .header img {
-    margin-bottom: 1em;
+    margin-bottom: 1.2em;
+}
+
+#darkModeDiv {
+    text-align: center;
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     background: linear-gradient(to bottom, #c1f0ca, #02531a);
     margin: 0;
     padding: 20px;
+    min-height: 100vh;
+    flex-grow: 1;
 }
 
 
@@ -26,7 +35,7 @@ body {
     display: inline-block;
     margin: 10px;
     padding: 10px 20px;
-    
+
     background-color: rgba(0, 0, 0, 0.01);
     border: 2px solid black;
 
@@ -66,8 +75,16 @@ h1 {
     align-items: center;
 }
 
+#popUpPlace {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 .popup {
-    position: fixed;
+    /* position: fixed; */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -94,6 +111,10 @@ h1 {
 
 }
 
+h2 {
+    text-align: center;
+}
+
 svg {
     width: auto;
     height: auto;
@@ -105,6 +126,10 @@ svg {
 }
 
 @media (max-width: 600px) {
+    .container {
+        margin: 0;
+        padding: 0 20px;
+    }
 
     .graphic {
         transform: scale(0.6);
@@ -116,4 +141,26 @@ svg {
     .button {
         font-size: 16px;
     }
+}
+
+.dark-mode {
+    background-color: #fff;
+    color: #fff;
+  }
+  
+  /* Additional styles for dark mode */
+  .dark-mode #platesCount,
+  .dark-mode #highestRecord,
+  .dark-mode #strategyAlert {
+    color: #fff;
+  }
+
+  body.dark-mode {
+    background: linear-gradient(to bottom, #030, #000);
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+}
+body.dark-mode button {
+    color: white;
 }

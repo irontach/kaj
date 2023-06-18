@@ -8,6 +8,9 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
 
 
 <body>
@@ -54,13 +57,21 @@
             <input type="number" id="heightInput" placeholder="Enter height" autofocus />
         </div>
 
-        <button id="submitBtn" class="button">Submit</button>
+        <div id="popUpPlace">
+            <button id="submitBtn" class="button">Submit</button>
+        </div>
 
-        <h2 id="bottomText">Waiting for BMI </h2>
+        <span>
+            <h2 id="bottomText">Waiting for BMI </h2>
+        </span>
 
         <div id="counter">
-            <h2>Plates Eaten: <span id="platesCount">0</span></h2>
-            <h2>Highest Record: <span id="highestRecord">0</span></h2>
+            <span>
+                <h2>Plates Eaten: <span id="platesCount">0</span></h2>
+            </span>
+            <span>
+                <h2>Highest Record: <span id="highestRecord">0</span></h2>
+            </span>
         </div>
 
 

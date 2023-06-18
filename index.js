@@ -12,6 +12,8 @@ RunningSushiHelper.SushiHelper.prototype = {
         const sushiBtn = document.getElementById("sushiBtn");
         const sweetBtn = document.getElementById("sweetBtn");
         const saltyBtn = document.getElementById("saltyBtn");
+        const popUpPlace = document.getElementById('popUpPlace');
+
 
         const platesCount = document.getElementById("platesCount");
         const highestRecord = document.getElementById("highestRecord");
@@ -42,14 +44,14 @@ RunningSushiHelper.SushiHelper.prototype = {
         submitBtn.addEventListener("click", () => {
             const Weight = WeightInput.value;
             const height = heightInput.value;
-            if (Weight < 1 || height < 1 || Weight > 500 || height > 250) {
+            if (Weight < 30 || height < 30 || Weight > 500 || height > 250) {
                 const popup = document.createElement("div");
                 popup.classList.add("popup");
                 popup.textContent = "Please enter your real weight and height";
-                document.body.appendChild(popup);
+                popUpPlace.appendChild(popup);
                 document.getElementById('myAudioerror').play();
                 setTimeout(() => {
-                    document.body.removeChild(popup);
+                    popUpPlace.removeChild(popup);
                 }, 5000);
                 return;
             } else {
@@ -61,28 +63,28 @@ RunningSushiHelper.SushiHelper.prototype = {
                 popup.textContent = "Eat up!";
 
 
-                document.body.appendChild(popup);
+                popUpPlace.appendChild(popup);
 
 
                 document.getElementById('myAudiobell').play();
 
 
                 setTimeout(() => {
-                    document.body.removeChild(popup);
+                    popUpPlace.removeChild(popup);
                 }, 5000);
                 setInterval(() => {
                     const popup = document.createElement("div");
                     popup.classList.add("popup");
                     popup.textContent = "Eat up!";
 
-                    document.body.appendChild(popup);
+                    popUpPlace.appendChild(popup);
 
 
                     document.getElementById('myAudiobell').play();
 
 
                     setTimeout(() => {
-                        document.body.removeChild(popup);
+                        popUpPlace.removeChild(popup);
                     }, 5000);
 
                 }, 5000 * bmi / 10);
@@ -108,6 +110,14 @@ RunningSushiHelper.SushiHelper.prototype = {
             localStorage.setItem("sushiHelperData", JSON.stringify(data));
         });
 
+        window.addEventListener("popstate", (event) => {
+            if (this.count > 0) {
+                if (this.count == this.record) { this.record--; }
+                this.count--;
+                this.updateCounter();
+            }
+        });
+
     },
 
     updateCounter: function () {
@@ -127,14 +137,14 @@ RunningSushiHelper.SushiHelper.prototype = {
             popup.classList.add("popup");
             popup.textContent = "Slow down!";
 
-            document.body.appendChild(popup);
+            popUpPlace.appendChild(popup);
 
 
             document.getElementById('myAudioerror').play();
 
 
             setTimeout(() => {
-                document.body.removeChild(popup);
+                popUpPlace.removeChild(popup);
             }, 3000);
         }
 
@@ -148,9 +158,7 @@ RunningSushiHelper.SushiHelper.prototype = {
             highestRecord.textContent = this.record;
         }
 
-        if (this.count % 10 === 0) {
-            strategyAlert.textContent = "Time to slow down!";
-        }
+        
     }
 };
 
@@ -173,5 +181,20 @@ window.addEventListener("resize", () => {
     });
 });
 
+$(document).ready(function() {
+    const toggleSwitch = $('<input>', { type: 'checkbox', id: 'darkModeToggle' });
+  const toggleLabel = $('<label>', { for: 'darkModeToggle', text: 'Dark Mode' });
+  const wrapperDiv = $('<div>', {id: 'darkModeDiv'}); 
+
+  wrapperDiv.append(toggleSwitch, toggleLabel);
+
+  $('body').append(wrapperDiv);
+
+  function toggleDarkMode() {
+    $('body').toggleClass('dark-mode');
+  }
+
+  $('#darkModeToggle').on('change', toggleDarkMode);
+  });
 const sushiHelper = new RunningSushiHelper.SushiHelper();
 sushiHelper.initialize();
