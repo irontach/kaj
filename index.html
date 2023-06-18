@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+   <title>Running Sushi Helper</title>
+   <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+
+<body>
+   <h1>Running Sushi Helper</h1>
+
+
+   <div id="sushiBtn" class="button">Sushi</div>
+   <div id="sweetBtn" class="button">Non-Sushi Sweet</div>
+   <div id="saltyBtn" class="button">Non-Sushi Salty</div>
+
+
+   <div id="counter">
+       <h2>Plates Eaten: <span id="platesCount">0</span></h2>
+       <h2>Highest Record: <span id="highestRecord">0</span></h2>
+   </div>
+
+
+   <div id="strategyAlert"></div>
+
+
+   <script>
+       // Get the buttons and counter elements
+       const sushiBtn = document.getElementById("sushiBtn");
+       const sweetBtn = document.getElementById("sweetBtn");
+       const saltyBtn = document.getElementById("saltyBtn");
+       const platesCount = document.getElementById("platesCount");
+       const highestRecord = document.getElementById("highestRecord");
+       const strategyAlert = document.getElementById("strategyAlert");
+
+
+       // Initialize the plate count and highest record
+       let count = 0;
+       let record = 0;
+
+
+       // Event listeners for button clicks
+       sushiBtn.addEventListener("click", () => {
+           count++;
+           updateCounter();
+           checkStrategy();
+       });
+
+
+       sweetBtn.addEventListener("click", () => {
+           count++;
+           updateCounter();
+           checkStrategy();
+       });
+
+
+       saltyBtn.addEventListener("click", () => {
+           count++;
+           updateCounter();
+           checkStrategy();
+       });
+
+
+       // Update the counter display
+       function updateCounter() {
+           platesCount.textContent = count;
+       }
+
+
+       // Check if a new record has been set
+       function checkStrategy() {
+           if (count > record) {
+               record = count;
+               highestRecord.textContent = record;
+           }
+
+
+           // Implement your strategy alerts here
+           // For example, alert every 10 plates
+           if (count % 10 === 0) {
+               strategyAlert.textContent = "Time to slow down!";
+           }
+       }
+
+
+   </script>
+   <style>
+       body {
+           text-align: center;
+       }
+
+
+       h1 {
+           color: #333;
+       }
+
+
+       .button {
+           display: inline-block;
+           margin: 10px;
+           padding: 10px 20px;
+           background-color: #f2f2f2;
+           border-radius: 5px;
+           cursor: pointer;
+       }
+
+
+       #counter {
+           margin-top: 20px;
+       }
+
+
+       #strategyAlert {
+           margin-top: 20px;
+           font-weight: bold;
+       }
+   </style>
+</body>
+
+
+</html>
