@@ -110,24 +110,27 @@ RunningSushiHelper.SushiHelper.prototype = {
             localStorage.setItem("sushiHelperData", JSON.stringify(data));
         });
 
-        window.addEventListener("popstate", (event) => {
-            if (this.count > 0) {
-                if (this.count == this.record) { this.record--; }
-                this.count--;
-                this.updateCounter();
-            }
-        });
+        window.addEventListener("popstate", () => {
+            this.count--;
+            this.updateCounter();
+            this.record--;
+            this.updateRecord();
+          });
+
+        
 
     },
 
     updateCounter: function () {
         const platesCount = document.getElementById("platesCount");
         platesCount.textContent = this.count;
+
     },
 
     updateRecord: function () {
         const recordCount = document.getElementById("highestRecord");
         recordCount.textContent = this.record;
+
     },
 
     checkStrategy: function () {
