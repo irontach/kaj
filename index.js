@@ -87,7 +87,7 @@ RunningSushiHelper.SushiHelper.prototype = {
                         popUpPlace.removeChild(popup);
                     }, 5000);
 
-                }, 5000 * bmi / 10);
+                }, 5000 * 5 * bmi / 10);
             }
         });
 
